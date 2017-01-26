@@ -22,13 +22,18 @@ class Aac extends DefaultAudio
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getExtraParams()
+    {
+        return array('-strict', 'experimental');
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function getAvailableAudioCodecs()
     {
-        return array(
-            'aac',
-            'libfdk_aac'
-        );
+        return array('aac', 'libfdk_aac');
     }
 }
